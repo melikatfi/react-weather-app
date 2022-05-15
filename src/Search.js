@@ -15,10 +15,10 @@ export default function (){
                 <input type="text" className="form-control p-1" placeholder="Search City.." aria-label=""
                        aria-describedby="basic-addon1" />
                 <div className="input-group-prepend">
-                    <button className="btn bg-light faLocationDot" type="button">
+                    <button className="btn faLocationDot" type="button">
                         <FontAwesomeIcon icon={faLocationDot} />
                     </button>
-                    <button className="btn bg-light faSearchLocation" type="button">
+                    <button className="btn faSearchLocation" type="button">
                         <FontAwesomeIcon icon={faSearchLocation} />
                     </button>
                 </div>

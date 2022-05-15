@@ -1,4 +1,4 @@
-.App {
+.Main {
   background: radial-gradient(circle at 4.3% 10.7%, rgb(75, 252, 235) 13.6%, rgb(138, 118, 249) 100.7%);  min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
   text-align: center;
 }
 
-.App section{
+.MainSection{
   background: rgba( 255, 255, 255, 0.2 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 4.5px );
