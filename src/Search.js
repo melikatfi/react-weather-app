@@ -10,7 +10,7 @@ import { faSearchLocation } from '@fortawesome/free-solid-svg-icons'
 
 export default function (){
     return(
-        <form className="col-lg-7 m-auto">
+        <form className="col-lg-7 mx-auto my-5">
             <div className="input-group m-3">
                 <input type="text" className="form-control p-1" placeholder="Search City.." aria-label=""
                        aria-describedby="basic-addon1" />

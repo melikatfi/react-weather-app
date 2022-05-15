@@ -10,21 +10,21 @@ import { faSearchLocation } from '@fortawesome/free-solid-svg-icons'
 
 export default function (props){
     return(
-        <section className="my-3 mx-auto col-lg-11 bg-info">
-            <div className=" text-center">
-                <h2>{props.Name}</h2>
+        <section className="my-5 mx-auto col-lg-11">
+            <div className=" text-center cityName">
+                <h1>{props.Name}</h1>
             </div>
-            <div className="text-center row">
-                <div className="col-lg-6">
+            <div className="text-center row justify-content-evenly my-3">
+                <div className="col-lg-3 icon">
                     <ReactAnimatedWeather
                         icon={"CLEAR_DAY"}
-                        color="silver"
-                        size="100"
+                        color="white"
+                        size="95"
                         animate="true"
                     />
                 </div>
-                <div className="col-lg-6">
-                    <h2>{props.Temp}</h2>
+                <div className="col-lg-3 temp">
+                    <h1>{props.Temp}</h1>
                 </div>
             </div>
         </section>
