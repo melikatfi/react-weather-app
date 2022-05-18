@@ -4,10 +4,10 @@ import './Weather.css';
 import axios from "axios";
 import { Audio } from  'react-loader-spinner';
 import ReactAnimatedWeather from 'react-animated-weather';
+import FormattedDate from "./formattedDate";
 
-export default function (props){
+export default function (){
     function handleWeather(response){
-        console.log(response)
         setWeatherData({
             Ready: true,
             Name: response.data.name,
@@ -16,7 +16,7 @@ export default function (props){
             Icon: response.data.weather[0].icon,
             Humidity: response.data.main.humidity,
             FeelsLike: Math.round(response.data.main.feels_like),
-
+            Date : new Date(response.data.dt * 1000),
         })
     }
     const [weatherData , setWeatherData] = useState({Ready: false})
@@ -36,22 +36,24 @@ export default function (props){
                             animate="true"
                         />
                         <h2>{weatherData.Description}</h2>
+                        <h2>
+                            <FormattedDate Value={weatherData.Date} />
+                        </h2>
                     </div>
                     <div className="col-lg-3 temp">
                         <h1>{weatherData.Temperature}</h1>
                         <div className="row">
-                            <h3 className="col-lg-6">feels like : {weatherData.FeelsLike}</h3>
-                            <h3 className="col-lg-6">humidity : {weatherData.Humidity}%</h3>
+                            <h2 className="col-lg-6">feels like : {weatherData.FeelsLike}</h2>
+                            <h2 className="col-lg-6">humidity : {weatherData.Humidity}%</h2>
                         </div>
                     </div>
                 </div>
             </section>
         )
     }else{
-        let city = "new york";
-        const apiKey = "b69a892df9f98e17c54dab23a734680a";
+        let city = "tehran";
+        const apiKey = "1bd0f6227982b36e9b4500fb504de9e8";
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-        console.log(apiUrl)
         axios.get(apiUrl).then(handleWeather)
         return (
             <section className="my-5 mx-auto text-center col-lg-11 justify-content-center">

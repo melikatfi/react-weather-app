@@ -17,9 +17,15 @@ input[type=submit]:focus {
     border-top: solid 1px #b0b0b0;
     border-bottom: solid 1px #b0b0b0;
 }
+.faLocationDot svg{
+    margin: 0 !important;
+}
 .faSearchLocation{
     border-radius: 0 5px 5px 0;
     border: solid 1px #b0b0b0;
     height: 40px !important;
     background: rgba( 255, 255, 255, 0.2 );
+}
+.faSearchLocation svg{
+    margin: 0 !important;
 }
