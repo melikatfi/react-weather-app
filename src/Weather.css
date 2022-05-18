@@ -6,3 +6,7 @@
     font-size: 80px !important;
     font-family: 'Zen Loop', cursive !important;
 }
+div svg{
+    justify-content: center !important;
+    margin: 15px auto !important;
+}
