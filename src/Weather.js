@@ -2,11 +2,11 @@ import React, {useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Weather.css';
 import axios from "axios";
-import { Audio } from  'react-loader-spinner';
+import { Rings } from  'react-loader-spinner';
 import ReactAnimatedWeather from 'react-animated-weather';
 import FormattedDate from "./formattedDate";
 
-export default function (){
+export default function Weather(){
     function handleWeather(response){
         setWeatherData({
             Ready: true,
@@ -23,7 +23,7 @@ export default function (){
 
     if (weatherData.Ready){
         return(
-            <section className="my-5 mx-auto col-lg-11">
+            <section className="my-3 mx-auto col-lg-11">
                 <div className=" text-center cityName">
                     <h1 className="text-capitalize">{weatherData.Name}</h1>
                 </div>
@@ -57,7 +57,7 @@ export default function (){
         axios.get(apiUrl).then(handleWeather)
         return (
             <section className="my-5 mx-auto text-center col-lg-11 justify-content-center">
-                    <Audio
+                    <Rings
                         height="100"
                         width="100"
                         color='#C8FCF6'
