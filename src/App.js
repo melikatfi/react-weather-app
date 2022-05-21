@@ -1,7 +1,6 @@
 import './App.css';
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Search from "./Search";
 import Weather from "./Weather";
 import Forecast from "./Forecast";
 
@@ -9,8 +8,7 @@ function App() {
   return (
     <section className="Main">
         <section className="col-lg-9 MainSection">
-            <Search/>
-            <Weather Name="Paris" Temp={14}/>
+            <Weather/>
             <div className="row justify-content-evenly">
                 <Forecast Temp={14}/>
                 <Forecast Temp={16}/>
