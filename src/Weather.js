@@ -3,11 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Weather.css';
 import axios from "axios";
 import { Rings } from  'react-loader-spinner';
-import ReactAnimatedWeather from 'react-animated-weather';
 import FormattedDate from "./formattedDate";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearchLocation } from '@fortawesome/free-solid-svg-icons'
+import WeatherIcon from "./WeatherIcon";
 
 export default function Weather(){
     const [weatherData , setWeatherData] = useState({Ready: false})
@@ -58,12 +57,7 @@ export default function Weather(){
                     </div>
                     <div className="text-center row justify-content-evenly my-3">
                         <div className="col-lg-3 icon">
-                            <ReactAnimatedWeather
-                                icon={"CLEAR_DAY"}
-                                color="white"
-                                size="95"
-                                animate="true"
-                            />
+                            <WeatherIcon code={weatherData.data.weather[0].icon}/>
                             <h2>{weatherData.Description}</h2>
                             <h2>
                                 <FormattedDate Value={weatherData.Date} />
