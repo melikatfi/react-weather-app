@@ -17,6 +17,9 @@ function App() {
                 <Forecast Temp={16}/>
                 <Forecast Temp={14}/>
             </div>
+            <div className="mt-3 text-light text-center">
+                <h4>This project was coded by Melika Tofighi and is open-sourced on <a className="text-light text-decoration-none" href="https://github.com/melikatfi/weather_app_melika">GitHub</a> and hosted on <a className="text-light text-decoration-none" href="https://www.netlify.com">Netlify</a></h4>
+            </div>
         </section>
     </section>
   );
