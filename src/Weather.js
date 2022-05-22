@@ -7,6 +7,7 @@ import FormattedDate from "./formattedDate";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearchLocation } from '@fortawesome/free-solid-svg-icons'
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemp from "./WeatherTemp";
 
 export default function Weather(){
     const [weatherData , setWeatherData] = useState({Ready: false})
@@ -64,7 +65,7 @@ export default function Weather(){
                             </h2>
                         </div>
                         <div className="col-lg-3 temp">
-                            <h1>{weatherData.Temperature}</h1>
+                            <WeatherTemp Celsius={weatherData.Temperature}/>
                             <div className="row">
                                 <h2 className="col-lg-6">feels like : {weatherData.FeelsLike}</h2>
                                 <h2 className="col-lg-6">humidity : {weatherData.Humidity}%</h2>

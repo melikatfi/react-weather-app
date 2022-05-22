@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
 body{
-  font-family: 'Zen Loop', cursive !important;
+  font-family: 'Zen Loop', serif !important;
 }
 .Main {
   background: radial-gradient(circle at 4.3% 10.7%, rgb(75, 252, 235) 13.6%, rgb(138, 118, 249) 100.7%);  min-height: 100vh;
@@ -20,4 +20,8 @@ body{
   -webkit-backdrop-filter: blur( 4.5px );
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.convert{
+  margin-top: 40px !important;
 }
