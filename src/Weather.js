@@ -57,7 +57,7 @@ export default function Weather(){
                     </div>
                     <div className="text-center row justify-content-evenly my-3">
                         <div className="col-lg-3 icon">
-                            <WeatherIcon code={weatherData.data.weather[0].icon}/>
+                            <WeatherIcon code={weatherData.Icon}/>
                             <h2>{weatherData.Description}</h2>
                             <h2>
                                 <FormattedDate Value={weatherData.Date} />
