@@ -1,18 +1,34 @@
-import React from 'react'
+import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Weather.css';
-import ReactAnimatedWeather from 'react-animated-weather';
+import axios from "axios";
+import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function Forecast(props){
-    return(
-        <div className="col-lg-1 mb-5 mt-3">
-            <ReactAnimatedWeather
-                icon="FOG"
-                color="white"
-                size="30"
-                animate="true"
-            />
-            <h1>{props.Temp}</h1>
-        </div>
-    )
+    let [loaded, setLoaded] = useState(false);
+    let [forecast, setForecast] = useState(null);
+
+    function handleForecast(response){
+        setForecast(response.data.daily);
+        setLoaded(true);
+    }
+
+    if (loaded) {
+        return (
+            <div className="row justify-content-evenly">
+                <WeatherForecastDay data={forecast[0]}/>
+                <WeatherForecastDay data={forecast[1]}/>
+                <WeatherForecastDay data={forecast[2]}/>
+                <WeatherForecastDay data={forecast[3]}/>
+                <WeatherForecastDay data={forecast[4]}/>
+            </div>
+        );
+    } else {
+        const apiKey = "1bd0f6227982b36e9b4500fb504de9e8";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.lat}&lon=${props.lon}&appid=${apiKey}`;
+        axios.get(apiUrl).then(handleForecast)
+
+        return null;
+    }
+
 }

@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearchLocation } from '@fortawesome/free-solid-svg-icons'
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemp from "./WeatherTemp";
+import Forecast from "./Forecast";
 
 export default function Weather(){
     const [weatherData , setWeatherData] = useState({Ready: false})
@@ -22,6 +23,8 @@ export default function Weather(){
             Humidity: response.data.main.humidity,
             FeelsLike: Math.round(response.data.main.feels_like),
             Date : new Date(response.data.dt * 1000),
+            lat : response.data.coord.lat,
+            lon : response.data.coord.lon,
         })
     }
     function handleSubmit(event){
@@ -58,7 +61,7 @@ export default function Weather(){
                     </div>
                     <div className="text-center row justify-content-evenly my-3">
                         <div className="col-lg-3 icon">
-                            <WeatherIcon code={weatherData.Icon}/>
+                            <WeatherIcon code={weatherData.Icon} size={95}/>
                             <h2>{weatherData.Description}</h2>
                             <h2>
                                 <FormattedDate Value={weatherData.Date} />
@@ -73,6 +76,9 @@ export default function Weather(){
                         </div>
                     </div>
                 </section>
+                <div>
+                    <Forecast lat={weatherData.lat} lon={weatherData.lon}/>
+                </div>
             </div>
         )
     }else{
@@ -90,7 +96,7 @@ export default function Weather(){
                         </div>
                     </div>
                 </form>
-                <section className="my-5 mx-auto text-center col-lg-11 justify-content-center">
+                <section className="p-5 my-5 mx-auto text-center col-lg-11 justify-content-center">
                     <Rings
                         height="100"
                         width="100"
